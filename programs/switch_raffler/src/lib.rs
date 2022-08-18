@@ -10,14 +10,12 @@ const VRF_REQUEST_COST: u64 = 2 * LAMPORTS_PER_SOL / 1000;
 pub const TIME_BUFFER: i64 = 20;
 const RAFFLE_SEED: &[u8] = b"RAFFLESTATESEED";
 const PLAYER_SEED: &[u8] = b"PLAYERSTATESEED";
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("9mHtGQcBPNyVcWZMbx7gDQXrPTqHMta5CgLfmrV5aDeq");
 
 #[program]
 pub mod switch_raffler {
     use anchor_spl::token::spl_token::instruction::AuthorityType;
-
     use super::*;
-
     pub fn create_raffle(
         ctx: Context<CreateRaffle>,
         end_timestamp: i64,
@@ -693,7 +691,6 @@ pub enum RaffleError {
     WinnersAlreadyDrawn,
     WinnerNotDrawn,
     NotAWinner,
-
     RandomnessAlreadyUsed,
     NoPrize,
 }
